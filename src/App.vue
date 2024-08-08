@@ -23,7 +23,7 @@ const getContactsForStage = (stageId: string) => {
 
 const moveContact = (contactId: string, newStageId: string) => {
   const contact = contacts.value.find((c) => c.id === contactId);
-  return (contact.stage = newStageId);
+  if (contact) return (contact.stage = newStageId);
 };
 
 onMounted(() => {

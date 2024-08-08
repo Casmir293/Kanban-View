@@ -33,13 +33,11 @@ const emit = defineEmits<{
 
 const onDragStart = (contactId: string) => {
   console.log("Dragging contact with ID:", contactId);
-  event.dataTransfer?.setData("contactId", contactId);
-  event.dataTransfer.dropEffect = "move";
-  event.dataTransfer.effectAllowed = "move";
+  event?.dataTransfer?.setData("contactId", contactId);
 };
 
 const onDrop = () => {
-  const contactId = event.dataTransfer?.getData("contactId");
+  const contactId = event?.dataTransfer?.getData("contactId");
   console.log(
     "Dropped contact with ID:",
     contactId,
