@@ -31,12 +31,12 @@ const emit = defineEmits<{
   (e: "moveContact", contactId: string, newStageId: string): void;
 }>();
 
-const onDragStart = (contactId: string) => {
+const onDragStart = (event: DragEvent, contactId: string) => {
   console.log("Dragging contact with ID:", contactId);
   event?.dataTransfer?.setData("contactId", contactId);
 };
 
-const onDrop = () => {
+const onDrop = (event: DragEvent) => {
   const contactId = event?.dataTransfer?.getData("contactId");
   console.log(
     "Dropped contact with ID:",
