@@ -1,9 +1,3 @@
-<template>
-  <div class="contact-card">
-    <p>{{ contact.full_name }}</p>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { defineProps } from "vue";
 
@@ -11,6 +5,15 @@ const props = defineProps<{
   contact: Contacts;
 }>();
 </script>
+
+<template>
+  <div class="contact-card">
+    <p>
+      <b>{{ contact.full_name }}</b>
+    </p>
+    <p>{{ contact.phone_number }}</p>
+  </div>
+</template>
 
 <style scoped>
 .contact-card {

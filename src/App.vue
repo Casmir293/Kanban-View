@@ -1,15 +1,3 @@
-<template>
-  <div class="kanban-board">
-    <StageColumn
-      v-for="stage in stages"
-      :key="stage.id"
-      :stage="stage"
-      :contacts="getContactsForStage(stage.id)"
-      @moveContact="moveContact"
-    />
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { useAPI } from "@/services/api";
@@ -32,9 +20,30 @@ onMounted(() => {
 });
 </script>
 
+<template>
+  <h1>Kanban View</h1>
+  <div class="kanban-board">
+    <StageColumn
+      v-for="stage in stages"
+      :key="stage.id"
+      :stage="stage"
+      :contacts="getContactsForStage(stage.id)"
+      @moveContact="moveContact"
+    />
+  </div>
+</template>
+
 <style scoped>
+h1 {
+  text-align: center;
+}
+
 .kanban-board {
-  display: flex;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 </style>

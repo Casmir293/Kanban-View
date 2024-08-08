@@ -1,33 +1,51 @@
 # kanban-view
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+This is a simple Kaban drag and drop task with Vue.js and TypeScript. It can be accessed live at [Kanban-View-App](https://kanban-view-eta.vercel.app/).
 
 ## Project Setup
+
+- Clone the Repository:
+
+```sh
+git clone https://github.com/Casmir293/Kanban-View
+```
+
+```sh
+cd Kanban-View
+```
+
+- Install Dependencies:
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+- Install Mock Server:
+
+```sh
+npm install -g http-server
+```
+
+- Run the Mock server on the Database Folder:
+
+```sh
+http-server ./database --cors
+```
+
+- Run the App:
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## Note
+
+Remember to update the BASE_URL on line four (4) of the database/api.ts directory to your mock up server URL.
 
 ```sh
-npm run build
+const BASE_URL = 'http://127.0.0.1:8080'
 ```
+
+## Acknowledgments
+
+- Shoutout to the Vue.js, and TypeScript communities for their excellent tools and resources.
