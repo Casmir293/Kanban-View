@@ -4,7 +4,7 @@
     :style="{ borderColor: stage.header_color }"
     @dragover.prevent
     @dragenter.prevent
-    @drop="onDrop"
+    @drop="onDrop($event)"
   >
     <h3>{{ stage.name }}</h3>
     <div class="contacts">
@@ -13,7 +13,7 @@
         :key="contact.id"
         :contact="contact"
         draggable="true"
-        @dragstart="onDragStart(contact.id)"
+        @dragstart="onDragStart(contact.id, $event)"
       />
     </div>
   </div>
@@ -31,7 +31,7 @@ const emit = defineEmits<{
   (e: "moveContact", contactId: string, newStageId: string): void;
 }>();
 
-const onDragStart = (event: DragEvent, contactId: string) => {
+const onDragStart = (contactId: string, event: DragEvent) => {
   console.log("Dragging contact with ID:", contactId);
   event?.dataTransfer?.setData("contactId", contactId);
 };
