@@ -1,5 +1,5 @@
 <template>
-  <section>Hello, World!</section>
+  <div class="app"></div>
 </template>
 
 <script setup lang="ts"></script>
