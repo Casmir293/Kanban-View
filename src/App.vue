@@ -21,7 +21,7 @@ const getContactsForStage = (stageId: string) => {
   return contacts.value.filter((contact) => contact.stage === stageId);
 };
 
-const moveContact = (contactId: string, newStageId: string) => {
+const moveContact = (contactId: string | undefined, newStageId: string) => {
   const contact = contacts.value.find((c) => c.id === contactId);
   if (contact) return (contact.stage = newStageId);
 };
