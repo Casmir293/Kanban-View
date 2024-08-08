@@ -28,7 +28,7 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: "moveContact", contactId: string, newStageId: string): void;
+  (e: "moveContact", contactId: string | undefined, newStageId: string): void;
 }>();
 
 const onDragStart = (contactId: string, event: DragEvent) => {
