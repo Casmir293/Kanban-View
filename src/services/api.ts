@@ -1,9 +1,9 @@
 import { ref } from 'vue';
 
-export function useStages() {
+export function useAPI() {
   const BASE_URL = 'http://127.0.0.1:8081';
-  const stages = ref<any[]>([]);
-  const contacts = ref<any[]>([]);
+  const stages = ref<Stages[]>([]);
+  const contacts = ref<Contacts[]>([]);
 
   const fetchStages = async () => {
     const response = await fetch(`${BASE_URL}/stages.json`);
